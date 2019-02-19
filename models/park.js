@@ -59,6 +59,17 @@ Park.prototype.totalSales = function() {
   return total;
 }
 
+Park.prototype.speciesCount = function() {
+  let arr = this.dinosaurs;
+  let counts = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let dino = arr[i].diet;
+    counts[dino] = counts[dino] ? counts[dino] + 1 : 1;
+  }
+ return counts;
+}
+
 
 
 module.exports = Park;

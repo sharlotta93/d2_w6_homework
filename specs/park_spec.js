@@ -73,4 +73,11 @@ describe('Park', function() {
     assert.strictEqual(actual, 1368750);
   });
 
+  it('Return number of species', function() {
+    dino = new Dinosaur('Diplodocus', 'herbivore', 50);
+    park.addDino(dino);
+    const actual = park.speciesCount();
+    assert.deepEqual(actual,{ 'carnivore': 1, 'herbivore': 2, 'omnivore': 1 });
+  });
+
 });
